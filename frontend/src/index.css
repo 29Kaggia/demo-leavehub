@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif;
+  --color-ink: #102a24;
+  --color-forest: #0f766e;
+  --color-mint: #f0fdfa;
+}
+
+@layer base {
+  * { @apply border-slate-200; }
+  html { @apply min-w-80 bg-slate-50; }
+  body { @apply min-w-80 bg-slate-50 font-sans text-slate-800 antialiased; font-size: 36px; }
+  button, input, select, textarea { font: inherit; }
+  button { -webkit-tap-highlight-color: transparent; }
+}

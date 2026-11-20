@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 175" role="img" aria-labelledby="title">
+  <title id="title">Tech 100 — Performance Marketing, Impact, Culture</title>
+  <defs>
+    <linearGradient id="wordmark" gradientUnits="userSpaceOnUse" x1="202" y1="0" x2="615" y2="0">
+      <stop offset="0" stop-color="#10c5ee"/><stop offset=".36" stop-color="#4691f2"/><stop offset=".63" stop-color="#8954e8"/><stop offset="1" stop-color="#ed00c4"/>
+    </linearGradient>
+  </defs>
+  <g fill="#10c5ee">
+    <circle cx="10" cy="71" r="3.5"/><circle cx="20" cy="103" r="12"/><circle cx="24" cy="49" r="8"/><circle cx="24" cy="123" r="11"/><circle cx="27" cy="76" r="10"/><circle cx="42" cy="83" r="9"/><circle cx="44" cy="25" r="9"/><circle cx="40" cy="145" r="9"/>
+  </g>
+  <g fill="#389df2">
+    <circle cx="48" cy="108" r="4"/><circle cx="51" cy="58" r="4"/><circle cx="58" cy="162" r="5"/><circle cx="64" cy="130" r="5"/><circle cx="59" cy="79" r="4"/><circle cx="71" cy="42" r="3.5"/><circle cx="77" cy="149" r="10"/><circle cx="72" cy="18" r="10"/>
+  </g>
+  <g fill="#6678ec">
+    <circle cx="91" cy="138" r="4"/><circle cx="96" cy="10" r="12"/><circle cx="83" cy="119" r="4"/><circle cx="103" cy="55" r="4"/><circle cx="105" cy="154" r="12"/><circle cx="106" cy="9" r="4"/><circle cx="120" cy="72" r="4"/>
+  </g>
+  <g fill="#9b48e3">
+    <circle cx="107" cy="115" r="4"/><circle cx="110" cy="34" r="5"/><circle cx="119" cy="125" r="5"/><circle cx="120" cy="17" r="8"/><circle cx="123" cy="96" r="3.5"/><circle cx="129" cy="51" r="5"/><circle cx="132" cy="140" r="9"/><circle cx="135" cy="25" r="7"/>
+  </g>
+  <g fill="#d21bd5">
+    <circle cx="134" cy="101" r="5"/><circle cx="141" cy="69" r="4"/><circle cx="148" cy="120" r="10"/><circle cx="149" cy="43" r="10"/><circle cx="155" cy="96" r="12"/><circle cx="157" cy="72" r="11"/><circle cx="166" cy="104" r="3.5"/><circle cx="169" cy="87" r="3.5"/><circle cx="134" cy="9" r="3.5"/>
+  </g>
+  <g fill="url(#wordmark)">
+    <text x="202" y="99" font-family="Arial, Helvetica, sans-serif" font-size="91" font-weight="300" letter-spacing="0">TECH</text>
+    <text x="468" y="99" font-family="Bodoni 72, Didot, 'Times New Roman', serif" font-size="92" font-weight="400" letter-spacing="-5">100</text>
+    <text x="202" y="155" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" letter-spacing=".9">PERFORMANCE MARKETING . IMPACT . CULTURE.</text>
+  </g>
+</svg>
