@@ -1,0 +1,11 @@
+.git
+.github
+.phpunit.cache
+config/app_local.php
+config/.env
+logs/*
+tmp/*
+vendor
+storage/*
+webroot/uploads/*
+Dockerfile
