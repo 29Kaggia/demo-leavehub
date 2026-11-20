@@ -289,6 +289,7 @@ return [
         'default' => [
             'className' => Connection::class,
             'driver' => Mysql::class,
+            'url' => env('DATABASE_URL', null),
             'persistent' => false,
             'timezone' => 'UTC',
 
