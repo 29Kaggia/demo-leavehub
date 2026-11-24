@@ -2,11 +2,12 @@
 
 @layer components {
   :root {
-    --color-primary: #4f46e5;
-    --color-primary-dark: #4338ca;
-    --color-primary-light: #e0e7ff;
-    --color-accent: #7c3aed;
-    --color-accent-light: #f3e8ff;
+    --color-primary: #1d4ed8;
+    --color-primary-dark: #1e40af;
+    --color-primary-light: #dbeafe;
+    --color-accent: #2563eb;
+    --color-accent-light: #eff6ff;
+    --brand-gradient: linear-gradient(135deg, #111827 0%, #17366f 58%, #1d4ed8 100%);
     --color-success: #059669;
     --color-success-light: #d1fae5;
     --color-warning: #d97706;
@@ -95,23 +96,28 @@
   .auth-page { @apply grid min-h-screen; background: var(--color-slate-100); grid-template-columns: 1.3fr 0.7fr; }
   .auth-intro {
     @apply relative flex min-h-full flex-col justify-between overflow-hidden p-10 text-white;
-    background: linear-gradient(145deg, #1e1b4b 0%, #312e81 50%, #4c1d95 100%);
+    background: var(--brand-gradient);
   }
   .auth-intro::before {
     content: '';
     @apply absolute -right-40 -top-40 h-[28rem] w-[28rem] rounded-full;
-    border: 2.5rem solid rgba(139, 92, 246, 0.08);
+    border: 2.5rem solid rgba(96, 165, 250, 0.1);
   }
   .auth-intro::after {
     content: '';
     @apply absolute -bottom-32 -left-24 h-96 w-96 rounded-full;
-    background: rgba(139, 92, 246, 0.12);
+    background: rgba(59, 130, 246, 0.12);
     filter: blur(80px);
+  }
+  .auth-logo {
+    @apply relative z-[1] block w-full max-w-sm rounded-xl object-contain object-left;
+    max-height: 9rem;
+    filter: drop-shadow(0 4px 10px rgba(3, 8, 20, 0.28));
   }
   .auth-intro h1 { @apply relative mt-4 text-5xl font-black tracking-tight; line-height: 1.1; }
   .auth-intro h2 { @apply relative mt-auto max-w-md text-3xl font-bold tracking-tight; line-height: 1.2; }
   .auth-intro > p:last-child { @apply relative mt-4 max-w-sm text-base leading-7; color: rgba(255,255,255,0.7); }
-  .auth-intro .eyebrow { @apply relative; color: #c4b5fd; }
+  .auth-intro .eyebrow { @apply relative; color: #bfdbfe; }
   .auth-card {
     @apply relative my-auto w-full justify-self-center;
     max-width: 26rem;
@@ -305,9 +311,9 @@
   }
 
   .portal { @apply grid min-h-screen; background: var(--color-slate-50); color: var(--color-slate-800); grid-template-columns: 272px minmax(0, 1fr); }
-  .sidebar { @apply flex min-h-full flex-col justify-between px-5 py-7; background: linear-gradient(180deg, #1e1b4b 0%, #312e81 100%); }
+  .sidebar { @apply flex min-h-full flex-col justify-between px-5 py-7; background: var(--brand-gradient); }
   .brand { @apply px-3 text-2xl font-black tracking-tight text-white; }
-  .sidebar-label { @apply mb-3 mt-10 px-3 text-[10px] font-bold uppercase tracking-[0.18em]; color: rgba(196, 181, 253, 0.5); }
+  .sidebar-label { @apply mb-3 mt-10 px-3 text-[10px] font-bold uppercase tracking-[0.18em]; color: rgba(191, 219, 254, 0.58); }
   .nav-item {
     @apply my-1 flex w-full items-center justify-between rounded-xl bg-transparent px-3 py-3 text-left text-sm font-semibold shadow-none transition-all duration-200;
     color: rgba(255,255,255,0.65);
@@ -380,11 +386,11 @@
     @apply absolute right-7 top-6 text-[10px] font-black tracking-[0.18em];
     color: var(--color-slate-300);
   }
-  .attendance-timecard.active { border-left-color: #4f46e5; }
+  .attendance-timecard.active { border-left-color: var(--color-primary); }
   .attendance-timecard.complete { border-left-color: #059669; }
   .attendance-timecard-copy, .attendance-time { @apply relative z-[1]; }
   .attendance-state-dot { @apply mb-3 inline-block h-2.5 w-2.5 rounded-full; background: #f59e0b; box-shadow: 0 0 0 4px #fef3c7; }
-  .attendance-timecard.active .attendance-state-dot { background: #4f46e5; box-shadow: 0 0 0 4px #e0e7ff; }
+  .attendance-timecard.active .attendance-state-dot { background: var(--color-primary); box-shadow: 0 0 0 4px var(--color-primary-light); }
   .attendance-timecard.complete .attendance-state-dot { background: #059669; box-shadow: 0 0 0 4px #d1fae5; }
   .attendance-timecard .eyebrow { color: var(--color-slate-400); }
   .attendance-timecard h2 { @apply mt-2 text-2xl font-black tracking-tight; color: #1e1b4b; line-height: 1.2; }
@@ -406,10 +412,10 @@
   .attendance-location button:hover { background: var(--color-primary-light); border-color: var(--color-primary); color: var(--color-primary); transform: none; }
   .attendance-location button.selected {
     @apply font-semibold;
-    background: #eef2ff;
-    border-color: #818cf8;
-    color: #3730a3;
-    box-shadow: inset 0 0 0 1px #818cf8;
+    background: var(--color-primary-light);
+    border-color: #60a5fa;
+    color: var(--color-primary-dark);
+    box-shadow: inset 0 0 0 1px #60a5fa;
   }
   .attendance-location button span { @apply text-lg; }
   .attendance-actions-panel label small { @apply ml-1 font-normal; color: var(--color-slate-400); }
@@ -466,8 +472,8 @@
 
   .lifecycle-profile {
     @apply mb-8 flex flex-wrap items-center justify-between gap-4 rounded-3xl p-8 text-white shadow-xl;
-    background: linear-gradient(135deg, #1e1b4b 0%, #4c1d95 100%);
-    box-shadow: 0 20px 40px -10px rgba(30, 27, 75, 0.2);
+    background: linear-gradient(135deg, #111827 0%, #1d4ed8 100%);
+    box-shadow: 0 20px 40px -10px rgba(29, 78, 216, 0.2);
   }
   .lifecycle-profile > div { @apply flex items-center gap-4; }
   .lifecycle-profile .employee-avatar { @apply grid h-14 w-14 place-items-center rounded-2xl text-sm font-black; background: var(--color-accent); }
@@ -509,19 +515,19 @@
 
   .leave-request-workspace { @apply grid items-start gap-8; grid-template-columns: minmax(0, 1fr) 24rem; }
   .leave-request-workspace .request-card { @apply max-w-none; }
-  .leave-assistant { @apply overflow-hidden rounded-2xl border bg-white shadow-xl; border-color: #ddd6fe; box-shadow: 0 20px 40px -10px rgba(49, 46, 129, 0.15); }
-  .leave-assistant-heading { @apply relative flex items-center gap-4 overflow-hidden p-5 text-white; background: linear-gradient(135deg, #171344 0%, #3730a3 100%); }
-  .leave-assistant-heading::after { content: ''; @apply absolute -right-8 -top-10 h-32 w-32 rounded-full; border: 1rem solid rgba(196, 181, 253, 0.16); }
+  .leave-assistant { @apply overflow-hidden rounded-2xl border bg-white shadow-xl; border-color: #bfdbfe; box-shadow: 0 20px 40px -10px rgba(29, 78, 216, 0.15); }
+  .leave-assistant-heading { @apply relative flex items-center gap-4 overflow-hidden p-5 text-white; background: var(--brand-gradient); }
+  .leave-assistant-heading::after { content: ''; @apply absolute -right-8 -top-10 h-32 w-32 rounded-full; border: 1rem solid rgba(191, 219, 254, 0.16); }
   .assistant-logo, .leave-assistant-heading > div { @apply relative z-[1]; }
-  .assistant-logo { @apply w-32 shrink-0; height: auto; filter: drop-shadow(0 3px 8px rgba(15, 23, 42, 0.25)); }
-  .leave-assistant-heading .eyebrow { color: #c4b5fd; }
+  .assistant-logo { @apply w-32 shrink-0 object-contain; height: auto; filter: drop-shadow(0 2px 6px rgba(3, 8, 20, 0.25)); }
+  .leave-assistant-heading .eyebrow { color: #bfdbfe; }
   .leave-assistant-heading h2 { @apply mt-0.5 text-lg font-black tracking-tight; }
   .leave-assistant-heading small { @apply mt-1 flex items-center gap-1.5 text-[11px]; color: rgba(255,255,255,0.68); }
   .leave-assistant-heading small i { @apply h-1.5 w-1.5 rounded-full; background: #34d399; box-shadow: 0 0 0 3px rgba(52,211,153,0.14); }
-  .assistant-messages { @apply grid max-h-80 gap-4 overflow-y-auto p-5; background: linear-gradient(180deg, #f7f6ff 0%, white 100%); }
+  .assistant-messages { @apply grid max-h-80 gap-4 overflow-y-auto p-5; background: linear-gradient(180deg, #eff6ff 0%, white 100%); }
   .assistant-message { @apply flex items-start gap-3; }
   .assistant-message.user { @apply flex-row-reverse; }
-  .assistant-message > span { @apply grid h-7 w-7 shrink-0 place-items-center rounded-full text-[9px] font-black tracking-wide text-white; background: #312e81; }
+  .assistant-message > span { @apply grid h-7 w-7 shrink-0 place-items-center rounded-full text-[9px] font-black tracking-wide text-white; background: #1d4ed8; }
   .assistant-message.user > span { background: var(--color-primary); }
   .assistant-message p {
     @apply w-fit max-w-[88%] whitespace-pre-line rounded-2xl rounded-tl-md px-4 py-3 text-sm leading-6 shadow-sm;
@@ -529,27 +535,27 @@
     color: var(--color-slate-700);
     border: 1px solid var(--color-slate-100);
   }
-  .assistant-message.user p { @apply rounded-tl-2xl rounded-tr-md; background: #312e81; color: white; border-color: transparent; }
+  .assistant-message.user p { @apply rounded-tl-2xl rounded-tr-md; background: #1e40af; color: white; border-color: transparent; }
   .assistant-thinking { @apply flex min-h-10 items-center gap-1; }
   .assistant-thinking i { @apply h-1.5 w-1.5 rounded-full; background: var(--color-primary); animation: assistant-bounce 1s infinite ease-in-out; }
   .assistant-thinking i:nth-child(2) { animation-delay: 0.15s; }
   .assistant-thinking i:nth-child(3) { animation-delay: 0.3s; }
   @keyframes assistant-bounce { 0%, 80%, 100% { transform: translateY(0); opacity: .35; } 40% { transform: translateY(-3px); opacity: 1; } }
   .assistant-error { @apply mx-5 mb-4 rounded-xl border px-4 py-3 text-xs leading-5; background: var(--color-danger-light); border-color: #fecaca; color: #991b1b; }
-  .assistant-prompts { @apply flex flex-wrap gap-2 border-t bg-white px-5 pb-4 pt-5; border-color: #ede9fe; }
+  .assistant-prompts { @apply flex flex-wrap gap-2 border-t bg-white px-5 pb-4 pt-5; border-color: #dbeafe; }
   .assistant-prompts p { @apply w-full text-[10px] font-extrabold uppercase tracking-wider; color: var(--color-slate-400); }
   .assistant-prompts button {
     @apply rounded-full border px-4 py-2 text-[11px] font-bold shadow-none;
-    background: #f5f3ff;
-    border-color: #e9e5ff;
-    color: #4338ca;
+    background: #eff6ff;
+    border-color: #dbeafe;
+    color: #1e40af;
   }
-  .assistant-prompts button:hover { background: var(--color-accent-light); border-color: #c4b5fd; color: var(--color-accent); transform: none; box-shadow: none; }
+  .assistant-prompts button:hover { background: var(--color-accent-light); border-color: #bfdbfe; color: var(--color-accent); transform: none; box-shadow: none; }
   .assistant-input { @apply flex gap-3 bg-white px-5 pb-5; }
-  .assistant-input input { @apply min-w-0 flex-1 rounded-xl; background: #f7f6ff; border-color: #e9e5ff; }
-  .assistant-input button { @apply grid h-11 w-11 place-items-center rounded-xl p-0 text-lg leading-none shadow-none; background: #312e81; }
+  .assistant-input input { @apply min-w-0 flex-1 rounded-xl; background: #f8fafc; border-color: #dbeafe; }
+  .assistant-input button { @apply grid h-11 w-11 place-items-center rounded-xl p-0 text-lg leading-none shadow-none; background: #1e40af; }
   .assistant-input button:hover { background: var(--color-accent); transform: none; }
-  .assistant-disclaimer { @apply block border-t px-5 py-4 text-[10px] leading-4; background: #fafafa; border-color: #ede9fe; color: var(--color-slate-400); }
+  .assistant-disclaimer { @apply block border-t px-5 py-4 text-[10px] leading-4; background: #fafafa; border-color: #dbeafe; color: var(--color-slate-400); }
 
   .balance-strip { @apply mb-6 flex flex-wrap gap-3; }
   .balance-strip span { @apply rounded-full border px-4 py-2.5 text-xs font-medium; background: var(--color-primary-light); border-color: var(--color-primary-light); color: var(--color-primary-dark); }
@@ -759,7 +765,7 @@
   .employee-card:hover { transform: translateY(-3px); border-color: var(--color-primary-light); box-shadow: var(--shadow-lg); }
   .employee-card-main { @apply grid w-full items-center gap-4 rounded-none bg-transparent p-5 text-left shadow-none; grid-template-columns: auto minmax(0, 1fr); color: var(--color-slate-800); }
   .employee-card-main:hover { background: var(--color-primary-light); }
-  .employee-avatar { @apply grid h-12 w-12 place-items-center rounded-xl text-sm font-black tracking-wide text-white; background: linear-gradient(135deg, #1e1b4b 0%, #4f46e5 100%); }
+  .employee-avatar { @apply grid h-12 w-12 place-items-center rounded-xl text-sm font-black tracking-wide text-white; background: linear-gradient(135deg, #111827 0%, #1d4ed8 100%); }
   .employee-card-name { @apply min-w-0; }
   .employee-card-name strong { @apply block truncate text-sm font-bold; }
   .employee-card-name small { @apply mt-1 block truncate text-xs font-normal; color: var(--color-slate-500); }
@@ -780,7 +786,7 @@
 
   .sidebar { @apply gap-6 px-5 py-8; }
   .sidebar > div:first-child { @apply flex min-h-0 flex-1 flex-col; }
-  .sidebar-logo { @apply mb-5 w-44; }
+  .sidebar-logo { @apply mb-5 w-44 object-contain; height: auto; filter: drop-shadow(0 3px 7px rgba(3, 8, 20, 0.28)); }
   .brand { @apply px-3 text-xl; }
   .sidebar-label { @apply mb-2 mt-10 px-3; }
   .sidebar nav { @apply min-h-0 flex-1 overflow-y-auto pr-1; }
@@ -800,8 +806,9 @@
     .auth-page { grid-template-columns: 1fr; }
     .auth-intro { @apply min-h-auto p-8; display: none; }
     .portal { grid-template-columns: 1fr; background: var(--color-slate-50); }
-    .sidebar { @apply sticky top-0 z-30 flex-row items-center gap-4 px-5 py-4 shadow-lg; background: linear-gradient(90deg, #1e1b4b 0%, #312e81 100%); }
+    .sidebar { @apply sticky top-0 z-30 flex-row items-center gap-4 px-5 py-4 shadow-lg; background: var(--brand-gradient); }
     .sidebar > div:first-child { @apply flex min-w-0 items-center gap-4; }
+    .sidebar-logo { @apply mb-0 w-36; padding: 0; }
     .brand { @apply shrink-0 px-0 text-lg; }
     .sidebar-label, .profile, .signout { @apply hidden; }
     nav { @apply flex min-w-0 overflow-x-auto; }
