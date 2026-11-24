@@ -1,7 +1,7 @@
 FROM php:8.3-apache
 
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends libicu-dev libonig-dev unzip \
+    && apt-get install -y --no-install-recommends ca-certificates libicu-dev libonig-dev unzip \
     && docker-php-ext-install intl mbstring pdo_mysql \
     && a2enmod rewrite headers \
     && rm -rf /var/lib/apt/lists/*
